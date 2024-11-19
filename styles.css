@@ -1,0 +1,152 @@
+
+*{
+    /* margin: 0; */
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 4, .5);
+    background-color: #fff;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #f375b4, #ffb6c1);
+    color: white;
+}
+
+.menu, .menu-opciones {
+    font-size: 24px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.primera-secion {
+    background-color: #ffebee;
+    padding: 20px;
+    text-align: center;
+}
+
+.segunda-secion {
+    position: relative;
+    display: inline-block;
+}
+
+.tercera-secion {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 3px solid #ffb6c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.icono {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    background-color: #ffb6c1;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.formulario {
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.boton-inicio {
+    width: 80%;
+    padding: 12px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.registrar{
+    background-color: black;
+    color: black;
+}
+
+/* stylo juego */
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    margin-top: 1em;
+    background-color: #C3B1E1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to right, #f375b4, #ffb6c1);
+}
+
+#game-container {
+    text-align: center;
+}
+
+.game-btn {
+    margin: 5px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(to right, #f375b4, #ffb6c1);
+    color: white;
+}
+
+.game-btn:hover {
+    background-color: #C3B1E1;
+    
+}
