@@ -1,7 +1,4 @@
 
-
-
-
 class Usuario {
     constructor(nombre, contraseña) {
         this.nombre = nombre;
@@ -11,13 +8,13 @@ class Usuario {
 
 class SistemaUsuarios {
     constructor() {
-        // Cargar usuarios desde localStorage al iniciar la clase
+        // Cargar usuarios en localStorage 
         this.usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         this.usuarioActual = null;
     }
 
     guardarUsuarios() {
-        // Guardar la lista de usuarios en localStorage
+        // Guardar  lista
         localStorage.setItem('usuarios', JSON.stringify(this.usuarios));
     }
 
@@ -25,9 +22,9 @@ class SistemaUsuarios {
         const usuarioExistente = this.usuarios.find(usuario => usuario.nombre === nombre);
         if (!usuarioExistente) {
             this.usuarios.push(new Usuario(nombre, contraseña));
-            this.guardarUsuarios(); // Guardar usuarios en localStorage
+            this.guardarUsuarios(); 
             alert('Registro exitoso');
-            window.location.href = 'index.html'; // Redirige a la página de inicio de sesión
+            window.location.href = 'index.html'; 
         } else {
             alert('El usuario ya existe');
         }
@@ -37,8 +34,8 @@ class SistemaUsuarios {
         const usuario = this.usuarios.find(usuario => usuario.nombre === nombre && usuario.contraseña === contraseña);
         if (usuario) {
             this.usuarioActual = usuario;
-            localStorage.setItem('usuarioActual', JSON.stringify(usuario)); // Guardar usuario actual en localStorage
-            window.location.href = 'game.html'; // Redirige a la página del juego
+            localStorage.setItem('usuarioActual', JSON.stringify(usuario)); 
+            window.location.href = 'game.html'; 
         } else {
             alert('Usuario o contraseña incorrectos');
         }
@@ -46,8 +43,8 @@ class SistemaUsuarios {
 
     cerrarSesion() {
         this.usuarioActual = null;
-        localStorage.removeItem('usuarioActual'); // Eliminar el usuario actual de localStorage
-        window.location.href = 'index.html'; // Redirige a la página de inicio de sesión
+        localStorage.removeItem('usuarioActual'); // Elimina usuaroi
+        window.location.href = 'index.html'; 
     }
 }
 
@@ -78,10 +75,10 @@ class Juego {
 
 const sistemaUsuarios = new SistemaUsuarios();
 const juego = new Juego();
-// Eventos de Registro
+// Evento  Registro
 if (document.getElementById('register-btn')) {
     document.getElementById('register-btn').addEventListener('click', (event) => {
-        event.preventDefault(); // Evita el comportamiento predeterminado de enviar el formulario
+        event.preventDefault(); 
         const nombre = document.getElementById('register-username').value;
         const contraseña = document.getElementById('register-password').value;
         if (nombre && contraseña) {
@@ -95,7 +92,7 @@ if (document.getElementById('register-btn')) {
 
 
 
-// Eventos de Inicio de Sesión
+// Evento  Inicio
 if (document.getElementById('login-btn')) {
     document.getElementById('login-btn').addEventListener('click', () => {
         const nombre = document.getElementById('login-username').value;
@@ -108,7 +105,7 @@ if (document.getElementById('login-btn')) {
     });
 }
 
-// Eventos del Juego
+// Evento  Juego
 if (document.querySelectorAll('.game-btn').length > 0) {
     document.querySelectorAll('.game-btn').forEach(button => {
         button.addEventListener('click', (event) => {
@@ -119,7 +116,7 @@ if (document.querySelectorAll('.game-btn').length > 0) {
     });
 }
 
-// Evento de Cerrar Sesión
+// Evento  Cerrar Sesión
 if (document.getElementById('logout-btn')) {
     document.getElementById('logout-btn').addEventListener('click', () => {
         sistemaUsuarios.cerrarSesion();
